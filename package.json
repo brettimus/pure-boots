@@ -1,0 +1,20 @@
+{
+  "name": "pure-boots",
+  "version": "0.1.0",
+  "description": "easily build responsive pure.css grids from the commandline",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-pure-grids": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "boots <brbeut@gmail.com> (http://brettim.us/)",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "pure-grid": "index.js"
+  }
+}
