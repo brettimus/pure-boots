@@ -20,12 +20,11 @@ child = exec(command, function(err, stdout, stderr) {
         return;
     }
     console.log(stdout);
-    console.log("Success!");
 });
 
 
 function printUsage() {
     var usage = "*** PURE CLI\n"+
-        "*** Usage: pure-me <columns> <output-directory>";
+        "*** Usage: pure-me <columns> [<relative-directory-path>]";
     console.log(usage);
 }
