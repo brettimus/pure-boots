@@ -7,13 +7,17 @@ if (isNaN(Number(cols))) {
     console.log("***** Input Error *****\n<columns> must be a number!");
     process.exit(1);
 }
-var dest = process.argv[3] || process.cwd();
+var currDir = path.normalize(process.cwd());
+var dest = path.normalize(path.join(currDir, process.argv[3])) || currDir;
 
-var command = 'grunt --cols='+cols+' --dest='+dest;
+var command = path.join('grunt --cols='+cols+' --dest='+dest);
 
 var sys = require('sys');
 var exec = require('child_process').exec;
 var child;
+
+process.chdir(__dirname);
+
 
 child = exec(command, function(err, stdout, stderr) {
     if (err) {
