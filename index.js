@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 var path = require("path");
 var cols = process.argv[2] || 12;
 if (isNaN(Number(cols))) {
