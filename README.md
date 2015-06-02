@@ -1,5 +1,10 @@
 # pure-grid cli
-Easily create a responsive pure grid on the command line.
+Easily create a custom-column responsive pure grid on the command line.
+
+## Installation
+```sh
+npm install -g pure-boots
+```
 
 ## Usage
 ```
@@ -18,8 +23,5 @@ pure-grid m css
 ```
 
 ## :ghost: Before you use!
-
-:warning: Unfortunately, the `<dest>` option only works with relative filepaths.
-
 
 :warning: The output filenames are not customizable. They will be invariably `pure-grid-n.css` for an `n` column grid.

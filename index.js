@@ -7,10 +7,19 @@ if (isNaN(Number(cols))) {
     console.log("***** Input Error *****\n<columns> must be a number!");
     process.exit(1);
 }
-var currDir = path.normalize(process.cwd());
-var dest = path.normalize(path.join(currDir, process.argv[3])) || currDir;
+var currDir = process.cwd();
+var destDir = process.argv[3];
 
-var command = path.join('grunt --cols='+cols+' --dest='+dest);
+if (destDir) {
+    if (!path.isAbsolute(destDir)) {
+        destDir = path.join(currDir, destDir);
+    }
+} else {
+    destDir = currDir;
+}
+
+
+var command = path.join('grunt --cols='+cols+' --dest='+destDir);
 
 var sys = require('sys');
 var exec = require('child_process').exec;
@@ -26,11 +35,12 @@ child = exec(command, function(err, stdout, stderr) {
         return;
     }
     console.log(stdout);
+    console.log("* Success! pure-grid-"+cols+".css placed into "+destDir+"\n");
 });
 
 
 function printUsage() {
     var usage = "*** PURE CLI\n"+
-        "*** Usage: pure-me <columns> [<relative-directory-path>]";
+        "*** Usage: pure-grid <columns> [<relative-directory-path>]";
     console.log(usage);
 }

@@ -1,6 +1,6 @@
 {
   "name": "pure-boots",
-  "version": "0.1.2",
+  "version": "0.2.2",
   "description": "easily build responsive pure.css grids from the commandline",
   "main": "index.js",
   "dependencies": {
