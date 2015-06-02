@@ -30,11 +30,10 @@ process.chdir(__dirname);
 
 child = exec(command, function(err, stdout, stderr) {
     if (err) {
-        console.log("Error!", err);
+        console.log("*** OH NOZ! Error!", err);
         console.log(stderr);
         return;
     }
-    console.log(stdout);
     console.log("* Success! pure-grid-"+cols+".css placed into "+destDir+"\n");
 });
 
